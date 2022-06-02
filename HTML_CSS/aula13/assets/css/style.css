@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    transition: all 1s ease-in-out;
+}
+.heading:hover{
+    background-color: red;
+}
+.pai h1+p{
+    color: red;
+}
+.pai p+h1{
+    color: yellow;
+}
+
+.pai2 h1~p{
+    color: purple;
+}
+
+[meu-atributo="A"]{
+    color: brown;
+}
+
+[meu-atributo~="valor1"]{
+    color: black;
+}
+
+[meu-atributo|="valor"]{
+    color: aqua;
+}
+
+a {
+    color: darkorange;
+}
+
+a:visited{
+    color:blue;
+}
+a:link{
+    color: greenyellow;
+}
+a:hover{
+    background-color: darkviolet;
+    color: white;
+    text-decoration: none;
+}
