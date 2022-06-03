@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+p{
+    font-size: 1.6rem;
+}
+.pai{
+    width: 50rem; /*500px*/
+    height: 100vh;
+    overflow: hidden;
+}
+.pai > div{
+    width: 50% ;
+    height: 50rem;
+    background-color: blue;
+}
+.color-one {
+     background-color: yellow;
+}
+.color-two {
+    background-color: purple;
+}
+.color-three {
+    background-color: red;
+}
