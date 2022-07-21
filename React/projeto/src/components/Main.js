@@ -9,6 +9,15 @@ export default class Main extends Component {
     tarefas: [],
   };
 
+  handleDelete = (e, index) => {
+    const { tarefas } = this.state;
+    const novasTarefas = [...tarefas];
+    novasTarefas.splice(index, 1);
+    this.setState({
+      tarefas: [...novasTarefas],
+    });
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { tarefas } = this.state;
@@ -35,6 +44,7 @@ export default class Main extends Component {
     return (
       <div className="main">
         <h1>Lista de tarefas</h1>
+
         <form onSubmit={this.handleSubmit} className="form" action="#">
           <input onChange={this.handleChange} type="text" value={novaTarefa} />
           <button type="submit">
@@ -43,12 +53,18 @@ export default class Main extends Component {
         </form>
 
         <ul className="tarefas">
-          {tarefas.map((tarefa) => (
+          {tarefas.map((tarefa, index) => (
             <li key={tarefa}>
               {tarefa}
               <div>
-                <FaEdit className="edit" />
-                <FaWindowClose className="delete" />
+                <FaEdit
+                  onClick={(e) => this.handleChange(e, index)}
+                  className="edit"
+                />
+                <FaWindowClose
+                  onClick={(e) => this.handleDelete(e, index)}
+                  className="delete"
+                />
               </div>
             </li>
           ))}
