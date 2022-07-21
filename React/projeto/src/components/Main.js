@@ -6,7 +6,21 @@ import { FaPlus, FaEdit, FaWindowClose } from 'react-icons/fa';
 export default class Main extends Component {
   state = {
     novaTarefa: '',
-    tarefas: ['Fazer café', 'Estudar', 'Beber água'],
+    tarefas: [],
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { tarefas } = this.state;
+    let { novaTarefa } = this.state;
+    novaTarefa = novaTarefa.trim();
+
+    if (tarefas.indexOf(novaTarefa) !== -1) return;
+
+    const novasTarefas = [...tarefas, novaTarefa];
+    this.setState({
+      tarefas: [...novasTarefas],
+    });
   };
 
   handleChange = (e) => {
@@ -21,7 +35,7 @@ export default class Main extends Component {
     return (
       <div className="main">
         <h1>Lista de tarefas</h1>
-        <form className="form" action="#">
+        <form onSubmit={this.handleSubmit} className="form" action="#">
           <input onChange={this.handleChange} type="text" value={novaTarefa} />
           <button type="submit">
             <FaPlus />
