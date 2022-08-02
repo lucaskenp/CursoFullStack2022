@@ -1,21 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-const initialState = {
-  botaoClicado: false,
-};
+import rootReducer from './modules/rootReducer';
 
-const reducer = (state = initialState, { type } = {}) => {
-  switch (type) {
-    case 'BOTAO_CLICADO': {
-      const newState = { ...state };
-      newState.botaoClicado = !newState.botaoClicado;
-      return newState;
-    }
-    default:
-      return state;
-  }
-};
-
-const store = configureStore({ reducer });
+const store = configureStore({
+  reducer: rootReducer,
+});
 
 export default store;
