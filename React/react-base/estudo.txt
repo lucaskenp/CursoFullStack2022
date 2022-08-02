@@ -1,0 +1,4 @@
+Redux
+
+ação -> reducer -> newState
+ação(request) -> saga -> reducer -> success/fail
