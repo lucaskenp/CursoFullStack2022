@@ -2,3 +2,7 @@ Redux
 
 ação -> reducer -> newState
 ação(request) -> saga -> reducer -> success/fail
+
+Lodash
+
+yarn add lodash
