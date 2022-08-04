@@ -23,8 +23,5 @@ export const ProfilePicture = styled.div`
     border-radius: 50%;
   }
 
-  .user-circle{
-    width: 36px;
-    height: 36px;
-  }
+
 `;

@@ -32,17 +32,17 @@ export default function Alunos() {
                     alt=""
                   />
                 ) : (
-                  <FaUserCircle className="user-circle" />
+                  <FaUserCircle size={36} />
                 )}
               </ProfilePicture>
               <span>{aluno.nome}</span>
               <span>{aluno.email}</span>
 
               <Link to={`/aluno/${aluno.id}/edit`}>
-                <FaEdit />
+                <FaEdit size={16} />
               </Link>
               <Link to={`/aluno/${aluno.id}/delete`}>
-                <FaWindowClose />
+                <FaWindowClose size={16} />
               </Link>
             </div>
           );
